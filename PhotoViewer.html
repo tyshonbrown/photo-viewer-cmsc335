@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Catalog Inquiry</title>
+    <script src="code.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <br><br>
+        <div id="title">Photo Viewer</div>
+        <br><br><br>
+
+        <img id="photo" src="InitialImage.jpg" alt="Default Image" onclick="nextPhoto()">
+
+        <br><br>
+
+        <div class="form-container">
+            <div class="form-section">
+                <h3>Status</h3>
+                <p>Photo Being Displayed: 
+                    <input type="text" id="photo-name" class="photo-name" disabled>
+                </p>
+                <div id="status-message" class="status-message"></div>
+            </div>
+    
+            <div class="form-section">
+                <h3>Loading Images (Local Folder)</h3>
+                <label for="folder-name" class="element-name">Photos Folder:</label><input type="text" name="folder-name" id="folder-name"><br>
+                <label for="common-name" class="element-name">Common Name:</label><input type="text" name="common-name" id="common-name"><br>
+                <label>Start Photo Number: <input type="number" id="start-num" min="1"></label><br>
+                <label>End Photo Number: <input type="number" id="end-num" min="1"></label><br>
+                <br>
+                <button onclick="loadImages()">Load Photos</button>
+            </div>
+    
+            <div class="form-section">
+                <h3>Loading Images (JSON File)</h3>
+                <label>JSON URL: <input type="text" id="json-url" value="http://www.cs.umd.edu/~nelson/classes/resources/cmsc335/images/imagesSet1.json"></label><br>
+                <br>
+                <button onclick="loadJsonFile()">Load JSON</button>
+            
+            </div>
+    
+            <div class="form-section">
+                <h3>Iterating</h3>
+                <button onclick="previousPhoto()">Previous Photo</button>
+                <button onclick="nextPhoto()">Next Photo</button>
+                <button onclick="firstPhoto()">First Photo</button>
+                <button onclick="lastPhoto()">Last Photo</button>
+            </div>
+    
+            <div class="form-section">
+                <h3>SlideShows</h3>
+                <button onclick="startSlideShow()">Slideshow</button>
+                <button onclick="randomSlideShow()">RandomSlideShow</button>
+                <button onclick="stopSlideShow()">StopSlideShow</button>
+            </div>
+
+        </div>
+
+        <button onclick="reset()">Reset Form Values</button>        
+
+
+        <br><br>
+        
+    </div>
+  
+</body>
+
+</html>
